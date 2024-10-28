@@ -39,7 +39,8 @@ Route::group( [], function () {
         Route::get('/leads/create', [ 'leads' =>'Admin\LeadController@create','as' =>'leads.create']);
         Route::post('/leads/save',  [ 'leads' => 'Admin\LeadController@save', 'as' =>'leads.save']);
         Route::get('leads/{lead_id}', [ 'leads' => 'Admin\LeadController@show', 'as' => 'leads.show' ] );
-        Route::get('leads/{lead_id}', [ 'leads' => 'Admin\LeadController@edit', 'as' => 'leads.edit' ] );
+        Route::get('leads/{lead_id}/edit', [ 'leads' => 'Admin\LeadController@edit', 'as' => 'leads.edit' ] ); // Updated to avoid conflict
+        Route::delete('leads/{lead_id}', [ 'leads' => 'Admin\LeadController@destroy', 'as' => 'leads.destroy' ] );
 
         Route::get('/reports/expense-report', 'Admin\ReportsController@expenseReport');
         Route::get('/reports/income-report', 'Admin\ReportsController@incomeReport');

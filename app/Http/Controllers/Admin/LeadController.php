@@ -154,4 +154,13 @@ class LeadController extends Controller
         return view('admin.leadsd.edit', compact('lead', 'lead_contacts', 'lead_business_intelignce'));
     }
 
+    public function destroy(Request $request, $id)
+    {
+       
+        Lead::findOrFail($id)->delete();
+       
+       
+           return back();
+    }
+
 }
