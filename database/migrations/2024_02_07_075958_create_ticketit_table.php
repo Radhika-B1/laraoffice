@@ -17,7 +17,7 @@ return new class extends Migration
             $table->increments('id');
             $table->string('subject')->index('ticketit_subject_index');
             $table->longText('content');
-            $table->longText('html')->nullable()->default('NULL');
+            $table->longText('html')->nullable();
             $table->unsignedInteger('status_id')->index('ticketit_status_id_index');
             $table->unsignedInteger('priority_id')->index('ticketit_priority_id_index');
             $table->unsignedInteger('user_id')->index('ticketit_user_id_index');

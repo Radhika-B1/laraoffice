@@ -14,12 +14,13 @@ return new class extends Migration
     public function up()
     {
         Schema::create('cache', function (Blueprint $table) {
-            $table->string('key', 255)->primary();
-            $table->longText('value')->nullable()->default('NULL');
+            $table->string('key', 191)->primary(); // Changed from 255 to 191
+            $table->longText('value')->nullable();
             $table->integer('expiration')->nullable()->default(0);
-
+        
             $table->unique(['key'], 'key_UNIQUE');
         });
+        
     }
 
     /**

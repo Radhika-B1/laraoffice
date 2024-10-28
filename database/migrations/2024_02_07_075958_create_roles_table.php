@@ -16,12 +16,12 @@ return new class extends Migration
         Schema::create('roles', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
-            $table->string('name')->nullable()->default('NULL');
-            $table->string('slug')->nullable()->default('NULL');
-            $table->text('description')->nullable()->default('NULL');
+            $table->string('name')->nullable();
+            $table->string('slug')->nullable();
+            $table->text('description')->nullable();
            $table->timestamp('created_at')->nullable()->default(NULL);
             $table->timestamp('updated_at')->nullable()->default(NULL);
-            $table->string('color', 20)->nullable()->default('NULL');
+            $table->string('color', 20)->nullable();
             $table->softDeletes()->default(NULL);
             $table->enum('type', ['contact_type', 'role'])->nullable()->default('role');
             $table->enum('status', ['active', 'inactive'])->nullable()->default('active');

@@ -19,7 +19,7 @@ return new class extends Migration
             $table->unsignedInteger('user_id');
             $table->date('refunded_on');
             $table->string('payment_mode', 40);
-            $table->text('note')->nullable()->default('NULL');
+            $table->text('note')->nullable();
             $table->decimal('amount', 10, 0);
            $table->timestamp('created_at')->nullable()->default(NULL);
             $table->timestamp('updated_at')->nullable()->default(NULL);

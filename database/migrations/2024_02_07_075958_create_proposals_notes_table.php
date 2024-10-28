@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('proposals_notes', function (Blueprint $table) {
             $table->increments('id');
-            $table->text('description')->nullable()->default('NULL');
+            $table->text('description')->nullable();
             $table->date('date_contacted')->nullable()->default(NULL);
            $table->timestamp('created_at')->nullable()->default(NULL);
             $table->timestamp('updated_at')->nullable()->default(NULL);

@@ -15,11 +15,11 @@ return new class extends Migration
     {
         Schema::create('assets', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('serial_number')->nullable()->default('NULL');
-            $table->string('title')->nullable()->default('NULL');
-            $table->string('photo1')->nullable()->default('NULL');
-            $table->string('photo2')->nullable()->default('NULL');
-            $table->text('notes')->nullable()->default('NULL');
+            $table->string('serial_number')->nullable();
+            $table->string('title')->nullable();
+            $table->string('photo1')->nullable();
+            $table->string('photo2')->nullable();
+            $table->text('notes')->nullable();
            $table->timestamp('created_at')->nullable()->default(NULL);
             $table->timestamp('updated_at')->nullable()->default(NULL);
             $table->unsignedInteger('category_id')->nullable()->default(0)->index('259312_5c4fd97bd71bf_idx');

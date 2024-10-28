@@ -15,12 +15,12 @@ return new class extends Migration
     {
         Schema::create('warehouses', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name')->nullable()->default('NULL');
-            $table->text('description')->nullable()->default('NULL');
+            $table->string('name')->nullable();
+            $table->text('description')->nullable();
            $table->timestamp('created_at')->nullable()->default(NULL);
             $table->timestamp('updated_at')->nullable()->default(NULL);
             $table->softDeletes()->default(NULL)->index('warehouses_deleted_at_index');
-            $table->text('address')->nullable()->default('NULL');
+            $table->text('address')->nullable();
         });
     }
 

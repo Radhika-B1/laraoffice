@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('sms_gateways', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name')->nullable()->default('NULL');
-            $table->string('key')->nullable()->default('NULL');
-            $table->text('description')->nullable()->default('NULL');
+            $table->string('name')->nullable();
+            $table->string('key')->nullable();
+            $table->text('description')->nullable();
            $table->timestamp('created_at')->nullable()->default(NULL);
             $table->timestamp('updated_at')->nullable()->default(NULL);
             $table->softDeletes()->default(NULL)->index('sms_gateways_deleted_at_index');

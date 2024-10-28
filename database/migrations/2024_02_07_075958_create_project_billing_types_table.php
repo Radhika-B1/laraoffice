@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('project_billing_types', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title')->nullable()->default('NULL');
-            $table->text('description')->nullable()->default('NULL');
+            $table->string('title')->nullable();
+            $table->text('description')->nullable();
            $table->timestamp('created_at')->nullable()->default(NULL);
             $table->timestamp('updated_at')->nullable()->default(NULL);
             $table->softDeletes()->default(NULL)->index('project_billing_types_deleted_at_index');

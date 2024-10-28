@@ -20,7 +20,7 @@ return new class extends Migration
             $table->dateTime('end_time')->nullable()->default(NULL);
             $table->unsignedInteger('user_id');
             $table->decimal('hourly_rate', 15)->nullable()->default(0);
-            $table->text('note')->nullable()->default('NULL');
+            $table->text('note')->nullable();
            $table->timestamp('created_at')->nullable()->default(NULL);
             $table->timestamp('updated_at')->nullable()->default(NULL);
         });

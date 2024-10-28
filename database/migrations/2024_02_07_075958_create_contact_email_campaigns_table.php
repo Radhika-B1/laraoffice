@@ -15,17 +15,17 @@ return new class extends Migration
     {
         Schema::create('contact_email_campaigns', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('list_id')->nullable()->default('NULL');
-            $table->string('list_name')->nullable()->default('NULL');
-            $table->string('subject')->nullable()->default('NULL');
-            $table->string('from_name')->nullable()->default('NULL');
-            $table->string('from_email')->nullable()->default('NULL');
+            $table->string('list_id')->nullable();
+            $table->string('list_name')->nullable();
+            $table->string('subject')->nullable();
+            $table->string('from_name')->nullable();
+            $table->string('from_email')->nullable();
             $table->enum('is_schedule', ['yes', 'no'])->nullable()->default('no');
             $table->dateTime('schedule_date')->nullable()->default(NULL);
-            $table->text('content')->nullable()->default('NULL');
+            $table->text('content')->nullable();
             $table->timestamp('created_at')->useCurrentOnUpdate()->useCurrent();
             $table->timestamp('updated_at')->nullable()->default('0000-00-00 00:00:00');
-            $table->string('campaign_id', 50)->nullable()->default('NULL');
+            $table->string('campaign_id', 50)->nullable();
         });
     }
 

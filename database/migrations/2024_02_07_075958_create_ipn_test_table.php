@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('ipn_test', function (Blueprint $table) {
             $table->integer('id', true);
-            $table->longText('data')->nullable()->default('NULL');
+            $table->longText('data')->nullable();
            $table->timestamp('created_at')->nullable()->default(NULL);
             $table->timestamp('updated_at')->nullable()->default(NULL);
         });

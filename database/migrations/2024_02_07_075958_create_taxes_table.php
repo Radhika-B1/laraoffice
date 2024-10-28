@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('taxes', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name')->nullable()->default('NULL');
+            $table->string('name')->nullable();
             $table->double('rate', 7, 2)->nullable()->default(0);
             $table->enum('rate_type', ['value', 'percent'])->nullable()->default('percent');
-            $table->text('description')->nullable()->default('NULL');
+            $table->text('description')->nullable();
            $table->timestamp('created_at')->nullable()->default(NULL);
             $table->timestamp('updated_at')->nullable()->default(NULL);
             $table->softDeletes()->default(NULL)->index('taxes_deleted_at_index');

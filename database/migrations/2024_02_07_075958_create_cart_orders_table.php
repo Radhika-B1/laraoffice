@@ -17,7 +17,7 @@ return new class extends Migration
             $table->increments('id');
             $table->enum('status', ['Pending', 'Active'])->nullable()->default('Active');
             $table->decimal('price', 15)->nullable()->default(0);
-            $table->text('products')->nullable()->default('NULL');
+            $table->text('products')->nullable();
            $table->timestamp('created_at')->nullable()->default(NULL);
             $table->timestamp('updated_at')->nullable()->default(NULL);
             $table->softDeletes()->default(NULL)->index('cart_orders_deleted_at_index');

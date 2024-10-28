@@ -15,18 +15,18 @@ return new class extends Migration
     {
         Schema::create('client_projects', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title')->nullable()->default('NULL');
+            $table->string('title')->nullable();
             $table->double('budget')->nullable()->default(0);
-            $table->string('phase')->nullable()->default('NULL');
+            $table->string('phase')->nullable();
             $table->date('start_date')->nullable()->default(NULL);
             $table->date('due_date')->nullable()->default(NULL);
-            $table->text('description')->nullable()->default('NULL');
+            $table->text('description')->nullable();
            $table->timestamp('created_at')->nullable()->default(NULL);
             $table->timestamp('updated_at')->nullable()->default(NULL);
             $table->softDeletes()->default(NULL)->index('client_projects_deleted_at_index');
             $table->enum('priority', ['Low', 'Medium', 'High', 'Urgent'])->nullable()->default('Medium');
             $table->unsignedInteger('status_id')->nullable()->default(0)->index('259358_5c4ff380bc7e4');
-            $table->string('demo_url')->nullable()->default('NULL');
+            $table->string('demo_url')->nullable();
             $table->unsignedInteger('client_id')->nullable()->default(0)->index('259358_5c4ff9d6a3140');
             $table->unsignedInteger('billing_type_id')->nullable()->default(0)->index('259358_5c4ff9d6b9c2b');
             $table->date('date_finished')->nullable()->default(NULL);

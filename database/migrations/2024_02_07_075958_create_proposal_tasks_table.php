@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('proposal_tasks', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name')->nullable()->default('NULL');
-            $table->text('description')->nullable()->default('NULL');
+            $table->string('name')->nullable();
+            $table->text('description')->nullable();
             $table->unsignedInteger('priority_id')->nullable()->default(0);
             $table->date('startdate')->nullable()->default(NULL);
             $table->date('duedate')->nullable()->default(NULL);

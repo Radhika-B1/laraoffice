@@ -15,11 +15,11 @@ return new class extends Migration
     {
         Schema::create('supports', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name')->nullable()->default('NULL');
-            $table->string('email')->nullable()->default('NULL');
-            $table->string('subject')->nullable()->default('NULL');
+            $table->string('name')->nullable();
+            $table->string('email')->nullable();
+            $table->string('subject')->nullable();
             $table->enum('priority', ['Low', 'Medium', 'High', 'Urgent'])->nullable()->default('Medium');
-            $table->text('description')->nullable()->default('NULL');
+            $table->text('description')->nullable();
            $table->timestamp('created_at')->nullable()->default(NULL);
             $table->timestamp('updated_at')->nullable()->default(NULL);
             $table->softDeletes()->default(NULL)->index('supports_deleted_at_index');

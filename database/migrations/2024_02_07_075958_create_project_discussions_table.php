@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('project_discussions', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('subject')->nullable()->default('NULL');
-            $table->text('description')->nullable()->default('NULL');
+            $table->string('subject')->nullable();
+            $table->text('description')->nullable();
             $table->enum('show_to_customer', ['yes', 'no'])->nullable()->default('no');
             $table->timestamp('last_activity')->nullable()->default(NULL);
             $table->unsignedInteger('created_by')->nullable()->default(0)->index('fk_created_by_project_discussions');

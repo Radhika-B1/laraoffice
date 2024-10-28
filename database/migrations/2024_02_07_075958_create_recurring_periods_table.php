@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('recurring_periods', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title')->nullable()->default('NULL');
+            $table->string('title')->nullable();
             $table->integer('value')->nullable()->default(1);
             $table->char('type', 10)->nullable()->default('\'\'month\'\'')->comment('Eg: day, week, month, year');
-            $table->text('description')->nullable()->default('NULL');
+            $table->text('description')->nullable();
            $table->timestamp('created_at')->nullable()->default(NULL);
             $table->timestamp('updated_at')->nullable()->default(NULL);
             $table->softDeletes()->default(NULL)->index('recurring_periods_deleted_at_index');

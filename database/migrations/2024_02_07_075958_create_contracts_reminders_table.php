@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('contracts_reminders', function (Blueprint $table) {
             $table->unsignedInteger('id');
-            $table->text('description')->nullable()->default('NULL');
+            $table->text('description')->nullable();
             $table->date('date')->nullable()->default(NULL);
             $table->enum('isnotified', ['yes', 'no'])->nullable()->default('no');
             $table->enum('notify_by_email', ['no', 'yes'])->nullable()->default('no');

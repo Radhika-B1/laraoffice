@@ -34,7 +34,13 @@ $action = getController( 'action' );
        class="btn btn-xs btn-primary">@lang('global.app_view')</a>
         <?php
     }
-
+    elseif ( in_array($controller, array( 'LeadController' )) ) {
+       
+        ?>
+    <a href="{{ route( $routeKey.'.show', [ 'lead_id' => $row->id] ) }}"
+       class="btn btn-xs btn-primary">@lang('global.app_view')</a>
+        <?php
+    }
 
     else {
     ?>
@@ -93,7 +99,15 @@ $action = getController( 'action' );
 		<a href="{{ route( 'admin.client_projects.invoice-project-edit', [ 'project_id' => $row->project_id, 'id' => $row->id ] ) }}"
        class="btn btn-xs btn-primary"><?php echo $title; ?></a>
 	<?php	
-	}else { ?>
+	}
+    
+    elseif( 'LeadController' === $controller && 'leads' === $action ) {
+        ?>
+            <a href="{{ route( 'admin.leads.edit', [ 'lead_id' => $row->id] ) }}"
+           class="btn btn-xs btn-primary"><?php echo $title; ?></a>
+        <?php	
+        }
+    else { ?>
 	<a href="{{ route($routeKey.'.edit', $row->id) }}" class="btn btn-xs btn-info"><?php echo $title; ?></a>
     <?php } ?>
     @endif

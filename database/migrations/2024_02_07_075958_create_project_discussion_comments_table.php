@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('project_discussion_comments', function (Blueprint $table) {
             $table->increments('id');
-            $table->text('description')->nullable()->default('NULL');
+            $table->text('description')->nullable();
             $table->unsignedInteger('created_by_id')->nullable()->default(0)->index('fk_created_by_project_discussions');
             $table->unsignedInteger('contact_id')->nullable()->default(0)->index('fk_contact_id_project_discussions');
            $table->timestamp('created_at')->nullable()->default(NULL);
@@ -24,7 +24,7 @@ return new class extends Migration
             $table->unsignedInteger('project_id')->nullable()->default(0)->index('298246_5cc68dfc5f286');
             $table->unsignedInteger('discussion_id')->nullable()->default(0);
             $table->unsignedInteger('parent_id')->nullable()->default(0);
-            $table->string('attachment')->nullable()->default('NULL');
+            $table->string('attachment')->nullable();
         });
     }
 

@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('contract_types', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name', 300);
-            $table->text('description')->nullable()->default('NULL');
+            $table->text('description')->nullable();
             $table->date('created_at');
             $table->date('updated_at');
         });

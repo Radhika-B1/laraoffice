@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('locale');
             $table->string('group');
             $table->text('key');
-            $table->text('value')->nullable()->default('NULL');
+            $table->text('value')->nullable();
            $table->timestamp('created_at')->nullable()->default(NULL);
             $table->timestamp('updated_at')->nullable()->default(NULL);
         });

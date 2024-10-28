@@ -16,9 +16,9 @@ return new class extends Migration
         Schema::create('content_pages', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
-            $table->text('page_text')->nullable()->default('NULL');
-            $table->text('excerpt')->nullable()->default('NULL');
-            $table->string('featured_image')->nullable()->default('NULL');
+            $table->text('page_text')->nullable();
+            $table->text('excerpt')->nullable();
+            $table->string('featured_image')->nullable();
            $table->timestamp('created_at')->nullable()->default(NULL);
             $table->timestamp('updated_at')->nullable()->default(NULL);
         });

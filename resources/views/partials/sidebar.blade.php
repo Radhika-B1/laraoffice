@@ -95,7 +95,7 @@
                     <span class="title">@lang('global.app_dashboard')</span>
                 </a>
             </li>
-
+            <li class="header Lo-header"><a href="{{route('admin.leads.index')}}">Leads</a></li>
             @if( isPluginActive( ['invoice', 'credit_note', 'quotes'] ) )
                 @can('sale_access')
                 <li class="header Lo-header">@lang('custom.menu.sales')</li>

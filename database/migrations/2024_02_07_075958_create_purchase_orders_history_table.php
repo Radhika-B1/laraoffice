@@ -15,16 +15,16 @@ return new class extends Migration
     {
         Schema::create('purchase_orders_history', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('ip_address')->nullable()->default('NULL');
-            $table->text('country')->nullable()->default('NULL');
-            $table->string('city')->nullable()->default('NULL');
-            $table->text('browser')->nullable()->default('NULL');
-            $table->text('comments')->nullable()->default('NULL');
+            $table->string('ip_address')->nullable();
+            $table->text('country')->nullable();
+            $table->string('city')->nullable();
+            $table->text('browser')->nullable();
+            $table->text('comments')->nullable();
            $table->timestamp('created_at')->nullable()->default(NULL);
             $table->timestamp('updated_at')->nullable()->default(NULL);
             $table->softDeletes()->default(NULL)->index('invoices_history_deleted_at_index');
             $table->unsignedInteger('purchase_order_id')->nullable()->default(0)->index('259415_5c500ae99af17');
-            $table->string('operation_type', 45)->nullable()->default('NULL');
+            $table->string('operation_type', 45)->nullable();
         });
     }
 

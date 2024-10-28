@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('options', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name')->nullable()->default('NULL');
-            $table->text('value')->nullable()->default('NULL');
+            $table->string('name')->nullable();
+            $table->text('value')->nullable();
             $table->boolean('auto_load')->nullable()->default(false);
-            $table->text('comments')->nullable()->default('NULL');
+            $table->text('comments')->nullable();
         });
     }
 

@@ -15,14 +15,14 @@ return new class extends Migration
     {
         Schema::create('send_sms', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('send_to')->nullable()->default('NULL');
-            $table->text('message')->nullable()->default('NULL');
+            $table->string('send_to')->nullable();
+            $table->text('message')->nullable();
            $table->timestamp('created_at')->nullable()->default(NULL);
             $table->timestamp('updated_at')->nullable()->default(NULL);
             $table->softDeletes()->default(NULL)->index('send_sms_deleted_at_index');
             $table->unsignedInteger('gateway_id')->nullable()->default(0);
-            $table->string('status')->nullable()->default('NULL');
-            $table->text('gateway_response')->nullable()->default('NULL');
+            $table->string('status')->nullable();
+            $table->text('gateway_response')->nullable();
         });
     }
 

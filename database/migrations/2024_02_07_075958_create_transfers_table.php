@@ -16,9 +16,9 @@ return new class extends Migration
         Schema::create('transfers', function (Blueprint $table) {
             $table->increments('id');
             $table->date('date')->nullable()->default(NULL);
-            $table->text('description')->nullable()->default('NULL');
+            $table->text('description')->nullable();
             $table->double('amount')->nullable()->default(0);
-            $table->string('ref_no')->nullable()->default('NULL');
+            $table->string('ref_no')->nullable();
            $table->timestamp('created_at')->nullable()->default(NULL);
             $table->timestamp('updated_at')->nullable()->default(NULL);
             $table->softDeletes()->default(NULL)->index('transfers_deleted_at_index');

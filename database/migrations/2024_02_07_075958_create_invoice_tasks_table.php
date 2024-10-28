@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('invoice_tasks', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name')->nullable()->default('NULL');
-            $table->text('description')->nullable()->default('NULL');
+            $table->string('name')->nullable();
+            $table->text('description')->nullable();
             $table->date('startdate')->nullable()->default(NULL);
             $table->date('duedate')->nullable()->default(NULL);
             $table->date('datefinished')->nullable()->default(NULL);
@@ -43,7 +43,7 @@ return new class extends Migration
             $table->unsignedInteger('created_by_id')->nullable()->default(0)->index('fk_contacts_acrm_invoice_tasks_users_idx');
             $table->unsignedInteger('mile_stone_id')->nullable()->default(0)->index('298700_5cc801285d6cf');
             $table->unsignedInteger('is_recurring_from')->nullable()->default(0)->index('fk_is_recurring_from_invoice_tasks');
-            $table->string('attachments')->nullable()->default('NULL');
+            $table->string('attachments')->nullable();
         });
     }
 

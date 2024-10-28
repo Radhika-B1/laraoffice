@@ -15,15 +15,15 @@ return new class extends Migration
     {
         Schema::create('master_settings', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('module')->nullable()->default('NULL');
-            $table->string('slug')->nullable()->default('NULL');
-            $table->string('key')->nullable()->default('NULL');
-            $table->text('description')->nullable()->default('NULL');
-            $table->longText('settings_data')->nullable()->default('NULL');
+            $table->string('module')->nullable();
+            $table->string('slug')->nullable();
+            $table->string('key')->nullable();
+            $table->text('description')->nullable();
+            $table->longText('settings_data')->nullable();
            $table->timestamp('created_at')->nullable()->default(NULL);
             $table->timestamp('updated_at')->nullable()->default(NULL);
             $table->softDeletes()->default(NULL)->index('master_settings_deleted_at_index');
-            $table->string('moduletype', 50)->nullable()->default('NULL');
+            $table->string('moduletype', 50)->nullable();
             $table->enum('status', ['Active', 'Inactive'])->nullable()->default('Active');
         });
         $sqlFile = public_path('master_settings.sql'); // Change 'example.sql' to your SQL file name

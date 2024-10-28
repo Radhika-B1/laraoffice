@@ -17,7 +17,7 @@ return new class extends Migration
             $table->increments('id');
             $table->dateTime('start_date')->nullable()->default(NULL);
             $table->dateTime('end_date')->nullable()->default(NULL);
-            $table->text('description')->nullable()->default('NULL');
+            $table->text('description')->nullable();
            $table->timestamp('created_at')->nullable()->default(NULL);
             $table->timestamp('updated_at')->nullable()->default(NULL);
             $table->softDeletes()->default(NULL)->index('time_entries_deleted_at_index');

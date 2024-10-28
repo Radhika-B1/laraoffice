@@ -15,14 +15,14 @@ return new class extends Migration
     {
         Schema::create('dynamic_options', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title')->nullable()->default('NULL');
-            $table->text('description')->nullable()->default('NULL');
+            $table->string('title')->nullable();
+            $table->text('description')->nullable();
             $table->string('module', 50)->nullable()->default('1');
             $table->char('type', 10)->nullable()->default('priorities');
            $table->timestamp('created_at')->nullable()->default(NULL);
             $table->timestamp('updated_at')->nullable()->default(NULL);
             $table->softDeletes()->default(NULL)->index('recurring_periods_deleted_at_index');
-            $table->string('color', 10)->nullable()->default('NULL');
+            $table->string('color', 10)->nullable();
         });
     }
 

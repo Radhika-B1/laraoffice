@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('invoice_reminders', function (Blueprint $table) {
             $table->increments('id');
-            $table->text('description')->nullable()->default('NULL');
+            $table->text('description')->nullable();
             $table->date('date')->nullable()->default(NULL);
             $table->enum('isnotified', ['yes', 'no'])->nullable()->default('yes');
             $table->enum('notify_by_email', ['no', 'yes'])->nullable()->default('yes');

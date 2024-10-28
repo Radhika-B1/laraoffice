@@ -23,20 +23,20 @@ return new class extends Migration
             $table->unsignedInteger('customer_id')->nullable()->default(0)->index('270937_5c7544840dff5');
             $table->unsignedInteger('currency_id')->nullable()->default(0)->index('fk_currency_id_orders');
             $table->unsignedInteger('billing_cycle_id')->nullable()->default(0)->index('270937_5c754484400c2');
-            $table->text('products')->nullable()->default('NULL');
-            $table->string('slug')->nullable()->default('NULL');
+            $table->text('products')->nullable();
+            $table->string('slug')->nullable();
             $table->enum('is_recurring', ['yes', 'no'])->nullable()->default('no');
             $table->integer('total_cycles')->nullable()->default(0);
             $table->integer('cycles')->nullable()->default(0);
-            $table->char('recurring_type', 10)->nullable()->default('NULL');
+            $table->char('recurring_type', 10)->nullable();
             $table->integer('recurring_value')->nullable()->default(0);
             $table->date('last_recurring_date')->nullable()->default(NULL);
             $table->unsignedInteger('is_recurring_from')->nullable()->default(0)->index('fk_is_recurring_from_orders');
             $table->enum('prevent_overdue_reminders', ['yes', 'no'])->nullable()->default('no');
             $table->date('last_overdue_reminder')->nullable()->default(NULL);
             $table->date('invoice_date')->nullable()->default(NULL);
-            $table->string('invoice_due_date', 45)->nullable()->default('NULL');
-            $table->string('delivery_address')->nullable()->default('NULL');
+            $table->string('invoice_due_date', 45)->nullable();
+            $table->string('delivery_address')->nullable();
             $table->enum('stock_updated', ['yes', 'no'])->nullable()->default('yes');
         });
     }
