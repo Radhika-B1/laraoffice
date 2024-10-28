@@ -9,9 +9,9 @@ use Yajra\DataTables\DataTables;
 
 class LeadController extends Controller
 {
-    // public function index(){
-    //     return view('admin.leads.create');
-    // }
+    public function create(){
+        return view('admin.leads.create');
+    }
 
     public function index($type = '', $type_id = '')
     {
